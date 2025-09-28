@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEasy - Online Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen active">
+        <div class="splash-content">
+            <div class="logo-container">
+                <div class="logo-placeholder">🛍️</div>
+                <h1 class="app-title">VivekShopEasy</h1>
+            </div>
+            <p class="app-tagline">Your favorite online shopping destination</p>
+        </div>
+    </div>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="screen">
+        <header class="app-header">
+            <h1>ShopEasy</h1>
+        </header>
+
+        <div class="form-container">
+            <div class="form-card">
+                <h2 class="form-title">Login</h2>
+                
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="mobile" class="form-label">Mobile Number</label>
+                        <input type="tel" id="mobile" class="form-input" 
+                               placeholder="Enter 10-digit mobile number" maxlength="10" required>
+                        <div class="form-hint">10-digit mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-input" 
+                               placeholder="Enter your password" minlength="4" required>
+                        <div class="form-hint">Minimum 4 characters</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Login</button>
+
+                    <div class="form-links">
+                        <a href="#" id="forgot-password-link" class="form-link">Forgot Password?</a>
+                        <a href="#" id="register-link" class="form-link">New User? Register</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Registration Screen -->
+    <div id="register-screen" class="screen">
+        <header class="app-header">
+            <h1>ShopEasy</h1>
+        </header>
+
+        <div class="form-container">
+            <div class="form-card">
+                <h2 class="form-title">Register</h2>
+                
+                <form id="register-form" class="auth-form">
+                    <div class="form-group">
+                        <label for="reg-name" class="form-label">Full Name</label>
+                        <input type="text" id="reg-name" class="form-input" 
+                               placeholder="Enter your full name" minlength="3" required>
+                        <div class="form-hint">Minimum 3 characters</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email" class="form-label">Email Address</label>
+                        <input type="email" id="reg-email" class="form-input" 
+                               placeholder="Enter your email address" required>
+                        <div class="form-hint">Your email address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-mobile" class="form-label">Mobile Number</label>
+                        <input type="tel" id="reg-mobile" class="form-input" 
+                               placeholder="Enter 10-digit mobile number" maxlength="10" required>
+                        <div class="form-hint">10-digit mobile number</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-address" class="form-label">Delivery Address</label>
+                        <textarea id="reg-address" class="form-input" 
+                                  placeholder="Enter your delivery address" required></textarea>
+                        <div class="form-hint">Your delivery address</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password" class="form-label">Password</label>
+                        <input type="password" id="reg-password" class="form-input" 
+                               placeholder="Create a password" minlength="4" required>
+                        <div class="form-hint">Minimum 4 characters</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-confirm-password" class="form-label">Confirm Password</label>
+                        <input type="password" id="reg-confirm-password" class="form-input" 
+                               placeholder="Re-enter your password" required>
+                        <div class="form-hint">Re-enter your password</div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Register</button>
+
+                    <div class="form-links">
+                        <a href="#" id="back-to-login" class="form-link">Back to Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application Screen -->
+    <div id="app-container" class="screen">
+        <!-- App Header -->
+        <header class="app-header">
+            <button id="menu-toggle" class="header-btn">
+                <span class="hamburger">☰</span>
+            </button>
+            <h1 id="page-title">All Products</h1>
+            <div class="header-actions">
+                <button id="category-toggle" class="header-btn">Categories</button>
+                <div id="category-options" class="dropdown-menu">
+                    <a href="#" data-category="all">All Products</a>
+                    <a href="#" data-category="electronics">Electronics</a>
+                    <a href="#" data-category="fashion">Fashion</a>
+                    <a href="#" data-category="home">Home & Kitchen</a>
+                    <a href="#" data-category="beauty">Beauty</a>
+                </div>
+                <button id="sort-toggle" class="header-btn">Sort</button>
+                <div id="sort-options" class="dropdown-menu">
+                    <a href="#" data-sort="popular">Popular</a>
+                    <a href="#" data-sort="price_low">Price: Low to High</a>
+                    <a href="#" data-sort="price_high">Price: High to Low</a>
+                    <a href="#" data-sort="rating">Customer Rating</a>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation Drawer -->
+        <nav id="nav-drawer" class="nav-drawer">
+            <div class="nav-header">
+                <div class="logo-placeholder small">🛍️</div>
+                <div class="user-info">
+                    <h3 id="user-name">User Name</h3>
+                    <p id="user-phone">+91-XXXXXXXXXX</p>
+                </div>
+            </div>
+
+            <ul class="nav-menu">
+                <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+                <li><a href="#" data-page="categories" class="nav-link">Categories</a></li>
+                <li><a href="#" data-page="wishlist" class="nav-link">Wishlist</a></li>
+                <li><a href="#" data-page="orders" class="nav-link">Order History</a></li>
+                <li><a href="#" data-page="profile" class="nav-link">My Profile</a></li>
+                <li><a href="#" data-page="faqs" class="nav-link">FAQs</a></li>
+                <li><a href="#" id="logout-btn" class="nav-link logout">Logout</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="app-content">
+            <!-- Home/Products Page -->
+            <section id="home-page" class="page active">
+                <div class="search-container">
+                    <input type="text" id="search-input" class="search-input" placeholder="Search products...">
+                    <button id="search-btn" class="btn btn-primary">Search</button>
+                </div>
+                <div id="products-list" class="cards-grid">
+                    <!-- Products will be loaded here dynamically -->
+                </div>
+            </section>
+
+            <!-- Categories Page -->
+            <section id="categories-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">Categories</h2>
+                    <div id="categories-list" class="categories-grid">
+                        <!-- Categories will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Product Details Page -->
+            <section id="product-page" class="page">
+                <div id="product-details">
+                    <!-- Product details will be loaded here dynamically -->
+                </div>
+            </section>
+
+            <!-- Wishlist Page -->
+            <section id="wishlist-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">My Wishlist</h2>
+                    <div id="wishlist-items" class="cards-grid">
+                        <!-- Wishlist items will be loaded here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Profile Page -->
+            <section id="profile-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">My Profile</h2>
+                    <div id="user-profile" class="profile-card">
+                        <!-- User profile will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Order History Page -->
+            <section id="orders-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">Order History</h2>
+                    <div id="orders-list">
+                        <!-- Order history will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- FAQ Page -->
+            <section id="faqs-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">Frequently Asked Questions</h2>
+                    <div id="faqs-content" class="faq-container">
+                        <!-- FAQ content will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Cart Page -->
+            <section id="cart-page" class="page">
+                <div class="page-container">
+                    <h2 class="page-title">Shopping Cart</h2>
+                    <div id="cart-content">
+                        <!-- Cart content will be loaded here dynamically -->
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Floating Cart Button -->
+        <div id="cart-button" class="floating-cart">
+            <span id="cart-count" class="cart-badge">0</span>
+            <span class="cart-icon">🛒</span>
+        </div>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">Reset Password</h2>
+            <form id="forgot-password-form" class="modal-form">
+                <div class="form-group">
+                    <label for="reset-mobile" class="form-label">Registered Mobile Number</label>
+                    <input type="tel" id="reset-mobile" class="form-input" 
+                           placeholder="Enter registered mobile number" required>
+                </div>
+                <div class="form-group">
+                    <label for="reset-email" class="form-label">Registered Email</label>
+                    <input type="email" id="reset-email" class="form-input" 
+                           placeholder="Enter registered email" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Send OTP</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal -->
+    <div id="reset-password-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 class="modal-title">Set New Password</h2>
+            <form id="reset-password-form" class="modal-form">
+                <div class="form-group">
+                    <label for="otp" class="form-label">OTP</label>
+                    <input type="text" id="otp" class="form-input" 
+                           placeholder="Enter 4-digit OTP" maxlength="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="new-password" class="form-label">New Password</label>
+                    <input type="password" id="new-password" class="form-input" 
+                           placeholder="Enter new password" minlength="4" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm-new-password" class="form-label">Confirm New Password</label>
+                    <input type="password" id="confirm-new-password" class="form-input" 
+                           placeholder="Re-enter new password" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Reset Password</button>
+            </form>
+        </div>
+    </div>
+
+    <!--JavaScript Files -->
+    <script src="utils.js"></script>
+    <script src="auth.js"></script>
+    <script src="product.js"></script>
+    <script src="cart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
